@@ -1,4 +1,4 @@
-package com.edurda77.testliifehuckstudoi.ui.main
+package com.edurda77.testliifehuckstudoi.ui.company
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
