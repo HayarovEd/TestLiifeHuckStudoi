@@ -12,5 +12,5 @@ interface LiveHuckApi {
     @GET("test.php")
     suspend fun getCompanyData(
         @Query("id") id: String
-    ): CompanyDTO
+    ): List<CompanyDTO>
 }

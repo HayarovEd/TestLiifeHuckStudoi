@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="name">Name</string>
+    <string name="latitude">Широта</string>
+    <string name="longitude">Долгота</string>
+    <string name="phone">Телефон</string>
+    <string name="web">Сайт</string>
+    <string name="description">Описание</string>
+    <string name="back">Назад</string>
 </resources>

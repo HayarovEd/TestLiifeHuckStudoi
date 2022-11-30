@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.edurda77.testliifehuckstudoi.R
 import com.edurda77.testliifehuckstudoi.databinding.FragmentMainBinding
+import com.edurda77.testliifehuckstudoi.domain.DATA_TO_COMPANY
 import com.edurda77.testliifehuckstudoi.domain.entity.ItemCompany
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
 
-    //private lateinit var mainAdapter: MainAdapter
+    private lateinit var mainAdapter: MainAdapter
 
     private val viewModel by viewModels<MainViewModel>()
 
@@ -62,10 +66,12 @@ class MainFragment : Fragment() {
         val stateClickListener: MainAdapter.OnStateClickListener =
             object : MainAdapter.OnStateClickListener {
                 override fun onStateClick(itemCompany: ItemCompany, position: Int) {
-                    //To-do
+                    val bundle = bundleOf(DATA_TO_COMPANY to itemCompany.id)
+                    view?.findNavController()
+                        ?.navigate(R.id.action_mainFragment_to_companyFragment, bundle)
                 }
             }
-        val mainAdapter = MainAdapter(stateClickListener)
+        mainAdapter = MainAdapter(stateClickListener)
         mainAdapter.differ.submitList(companies)
         recyclerView.adapter = mainAdapter
 

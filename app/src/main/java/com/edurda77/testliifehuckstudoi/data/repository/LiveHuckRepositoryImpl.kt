@@ -28,7 +28,7 @@ class LiveHuckRepositoryImpl @Inject constructor(private val api: LiveHuckApi) :
         return try {
             Resource.Success(
                 data = api.getCompanyData(id = id
-                ).toCompanyData()
+                ).last().toCompanyData()
             )
         } catch(e: Exception) {
             e.printStackTrace()
