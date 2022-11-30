@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TestLiifeHuckStudoi</string>
-    <string name="name">Название компании</string>
+    <string name="name">Name</string>
     <string name="latitude">Широта</string>
     <string name="longitude">Долгота</string>
     <string name="phone">Телефон</string>
